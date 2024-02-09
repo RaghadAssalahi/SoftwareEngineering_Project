@@ -16,6 +16,7 @@ public class Group_Project_Software {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Hello group, very excited to work with you!");
+         System.out.println("Raghad successfully used github :)");
     }
     
 }
