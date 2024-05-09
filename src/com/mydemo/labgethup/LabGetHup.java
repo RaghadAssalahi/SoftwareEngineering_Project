@@ -12,5 +12,7 @@ public class LabGetHup {
 
     public static void main(String[] args) {
         System.out.println("reema jezani meow meow");
+        
+        System.out.println("wejdaan");
     }
 }
