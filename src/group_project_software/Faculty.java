@@ -16,7 +16,7 @@ public class Faculty extends User {
   private String previouseExperience;
   private Course course;
   private Course courseN;
-
+  
     public Faculty(Date startDate, String salary, String previouseExperience, Course course, Course courseN, String userFNme, String userLNme, String userID, String userEmail, String userPass, String userSpecilization) {
         super(userFNme, userLNme, userID, userEmail, userPass, userSpecilization);
         this.startDate = startDate;
@@ -26,9 +26,16 @@ public class Faculty extends User {
         this.courseN = courseN;
     }
 
+   
+    
+    public void sendMessage(Student student, String messageContent) {
+      String name = null;
+        Message message = new Message(messageContent, name);
+        student.receiveMessage(message);
+    }
+    
+
   
 
-   
-  
   
 }

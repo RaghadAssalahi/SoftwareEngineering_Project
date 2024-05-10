@@ -8,17 +8,31 @@ package group_project_software;
  *
  * @author LAYAN
  */
-public class Student extends User{
+public class Student extends User {
+   private String name;
+   private int userID;
    private Course courseid;
    private Course courseNam;
+   
 
     public Student(Course courseid, Course courseNam, String userFNme, String userLNme, String userID, String userEmail, String userPass, String userSpecilization) {
         super(userFNme, userLNme, userID, userEmail, userPass, userSpecilization);
         this.courseid = courseid;
         this.courseNam = courseNam;
     }
+
+    
+    
+    public void sendMessage(Student student, String messageContent) {
+        Message message = new Message(messageContent, name);
+        student.receiveMessage(message);
+    }
+
+    void receiveMessage(Message message) {
+     System.out.println("Message received by Student " + name + ": " + message.getContent() + " (from: " + message.getSender() + ")");
+
+    }
    
-   
-   
-   
+    
+    
 }
