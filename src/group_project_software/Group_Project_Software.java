@@ -15,7 +15,12 @@ public class Group_Project_Software {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        Course javaCourse=new Course("12345","java",5);
+        javaCourse.subscribeStudent("3456", "12345");
+        javaCourse.subscribeStudent("345", "12345");
+        javaCourse.subscribeStudent("34", "12345");
+        javaCourse.subscribeStudent("3457", "12345");
+        javaCourse.subscribeStudent("3457", "12345");
 
     }
     public static String deleteFaculity(int IDAdmin,int IDFaculty){
