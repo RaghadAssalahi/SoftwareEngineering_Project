@@ -25,6 +25,16 @@ public class User {
         this.userPass = userPass;
         this.userSpecilization = userSpecilization;
     }
+    
+    public User(){}
+    
+    public User(String userFNme ,int userID){
+    
+        this.userFNme = userFNme;
+        this.userID = userID;
+    
+    
+    }
 
     public String getUserFNme() {
         return userFNme;
