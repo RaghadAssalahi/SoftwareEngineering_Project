@@ -45,6 +45,13 @@ public class Faculty extends User {
    
    }
    
+   public Faculty(String Fname ,int ID ){
+   
+      super(Fname , ID);
+   
+   
+   }
+   
     
     public void sendMessage(Student student, String messageContent) {
       String name = null;
