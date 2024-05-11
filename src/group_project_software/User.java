@@ -12,12 +12,12 @@ public class User {
    
    private String userFNme;
    private String userLNme;
-   private String userID;
+   private int userID;
    private String userEmail;
    private String userPass;
    private String userSpecilization;
 
-    public User(String userFNme, String userLNme, String userID, String userEmail, String userPass, String userSpecilization) {
+    public User(String userFNme, String userLNme, int userID, String userEmail, String userPass, String userSpecilization) {
         this.userFNme = userFNme;
         this.userLNme = userLNme;
         this.userID = userID;
@@ -42,11 +42,11 @@ public class User {
         this.userLNme = userLNme;
     }
 
-    public String getUserID() {
+    public int getUserID() {
         return userID;
     }
 
-    public void setUserID(String userID) {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 
