@@ -16,16 +16,34 @@ public class Faculty extends User {
   private String previouseExperience;
   private Course course;
   private Course courseN;
+  public  static int [] all_faculty_ID ;
+  private  static int count =0 ;
   
-    public Faculty(Date startDate, String salary, String previouseExperience, Course course, Course courseN, String userFNme, String userLNme, String userID, String userEmail, String userPass, String userSpecilization) {
+  
+  
+    public Faculty(Date startDate, String salary, String previouseExperience, Course course, Course courseN, String userFNme, String userLNme, int userID, String userEmail, String userPass, String userSpecilization) {
         super(userFNme, userLNme, userID, userEmail, userPass, userSpecilization);
         this.startDate = startDate;
         this.salary = salary;
         this.previouseExperience = previouseExperience;
         this.course = course;
         this.courseN = courseN;
+        addFaculty(userID);
+        
     }
 
+   public Faculty(Date startDate, String salary, String previouseExperience, String userFNme, String userLNme, int userID, String userEmail, String userPass, String userSpecilization){
+   
+       super(userFNme, userLNme, userID, userEmail, userPass, userSpecilization);
+        this.startDate = startDate;
+        this.salary = salary;
+        this.previouseExperience = previouseExperience;
+   
+        addFaculty(userID);
+   
+   
+   
+   }
    
     
     public void sendMessage(Student student, String messageContent) {
@@ -35,7 +53,16 @@ public class Faculty extends User {
     }
     
 
+  private static void addFaculty(int IDFaculty ){
   
+         all_faculty_ID[count]= IDFaculty ;
+         count++;
+  
+  }
+
+    public static int[] getAll_faculty_ID() {
+        return all_faculty_ID;
+    }
 
   
 }
