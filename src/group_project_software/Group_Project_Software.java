@@ -21,6 +21,12 @@ public class Group_Project_Software {
         javaCourse.subscribeStudent("34", "12345");
         javaCourse.subscribeStudent("3457", "12345");
         javaCourse.subscribeStudent("3457", "12345");
+        
+        Faculty f1 =new Faculty("wejdan",123456);
+        Faculty f2 =new Faculty("nada",123789);
+        Manager M1 = new Manager("rehab",1357);
+        
+        Manager.deleteFaculity(1357, 123456);
 
     }
     
