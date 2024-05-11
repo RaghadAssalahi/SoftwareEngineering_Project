@@ -26,11 +26,9 @@ public class Course {
         this.counter=0;
          this.courses=new ArrayList<>();
          courses.add(courseID);
+         System.out.println("Course "+courseName+" is successfully added ");
   }
-//  public void courses(Course c){
-//      this.courses=new ArrayList<>();
-//      courses.add(courseID);
-//  }
+
   
   private boolean findStudent(String studentID){
       for(int i=0; i<subscriptionStudent.length;i++){
