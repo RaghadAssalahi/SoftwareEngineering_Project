@@ -16,7 +16,7 @@ public class Faculty extends User {
   private String previouseExperience;
   private Course course;
   private Course courseN;
-  public  static int [] all_faculty_ID ;
+  public  static int [] all_faculty_ID =new int [100];
   private  static int count =0 ;
   
   

@@ -14,7 +14,7 @@ public class Manager extends User{
    private Date startDate;
    private String jobTitle;
    private String salary;
-   private static int [] all_Manager_ID ;
+   private static int [] all_Manager_ID =new int [100];
    private  static int i =0 ;
    private int MID;
    private String FName;

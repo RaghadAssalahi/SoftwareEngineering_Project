@@ -22,11 +22,22 @@ public class Group_Project_Software {
         javaCourse.subscribeStudent("3457", "12345");
         javaCourse.subscribeStudent("3457", "12345");
         
+        System.out.println("");
+        
+        javaCourse.addCourse(new Course("CS101", "Introduction to Computer Science", 30));
+        javaCourse.addCourse(new Course("MA101", "Calculus I", 40));
+        
+        javaCourse.searchCourse();
+        
+        System.out.println("");
+        
         Faculty f1 =new Faculty("wejdan",123456);
         Faculty f2 =new Faculty("nada",123789);
         Manager M1 = new Manager("rehab",1357);
         
         Manager.deleteFaculity(1357, 123456);
+        
+        System.out.println("");
 
     }
     
