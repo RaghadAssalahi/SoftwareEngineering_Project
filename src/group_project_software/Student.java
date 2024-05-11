@@ -15,7 +15,7 @@ public class Student extends User {
    private Course courseNam;
    
 
-    public Student(Course courseid, Course courseNam, String userFNme, String userLNme, String userID, String userEmail, String userPass, String userSpecilization) {
+    public Student(Course courseid, Course courseNam, String userFNme, String userLNme, int userID, String userEmail, String userPass, String userSpecilization) {
         super(userFNme, userLNme, userID, userEmail, userPass, userSpecilization);
         this.courseid = courseid;
         this.courseNam = courseNam;
