@@ -23,13 +23,7 @@ public class Group_Project_Software {
         javaCourse.subscribeStudent("3457", "12345");
 
     }
-    public static String deleteFaculity(int IDAdmin,int IDFaculty){
     
-    
-    
-    return "";
-    
-    }
     
      
 }
