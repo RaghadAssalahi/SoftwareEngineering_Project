@@ -16,6 +16,8 @@ public class Manager extends User{
    private String salary;
    private static int [] all_Manager_ID ;
    private  static int i =0 ;
+   private int MID;
+   private String FName;
 
     public Manager(Date startDate, String jobTitle, String salary, String userFNme, String userLNme, int userID, String userEmail, String userPass, String userSpecilization) {
         super(userFNme, userLNme, userID, userEmail, userPass, userSpecilization);
@@ -25,6 +27,12 @@ public class Manager extends User{
         addManager(userID);
     }
    
+    public Manager(String FName,int MID){
+       this.MID=MID;
+       this.FName=FName;
+    
+    
+    }
     
     public static String deleteFaculity(int IDManager,int IDFaculty){
     
