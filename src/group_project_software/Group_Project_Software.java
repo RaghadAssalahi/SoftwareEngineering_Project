@@ -4,6 +4,8 @@
  */
 package group_project_software;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Ragy
@@ -15,6 +17,11 @@ public class Group_Project_Software {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+         Student student = new Student("Alice");
+        LocalDate deadline = LocalDate.parse("2024-05-20"); // Parse the deadline string to LocalDate
+        Assignment assignment = new Assignment("Java Assignment", "Create a Java program", deadline);
+        Course course = new Course("Java Programming", "JAVA101");
+
         Course javaCourse=new Course("12345","java",5);
         javaCourse.subscribeStudent("3456", "12345");
         javaCourse.subscribeStudent("345", "12345");

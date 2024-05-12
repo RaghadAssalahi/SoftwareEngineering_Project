@@ -19,7 +19,14 @@ public class Course {
   private int courseCapasity;
   private int counter;
   private List<Course> courseList;
-          
+  private ArrayList<Assignment> assignments;
+  
+  public Course(String courseName, String courseID){
+      this.courseName=courseName;
+      this.courseID=courseID;
+      this.assignments=new ArrayList<>();
+      
+  }
   public Course(String courseID, String courseName, int courseCapasity) {
         this.courseID = courseID;
         this.courseName = courseName;
@@ -95,4 +102,12 @@ public class Course {
  
   
 }
+    
+      public void addAssignment(Assignment assignment){
+        assignments.add(assignment);
+    }
+      
+      public void submitAssignment(Student student, Assignment assignment, String submission){
+          System.out.println(student.getName() + " submitted assignment: " + assignment.getTitle());
+      }
 }

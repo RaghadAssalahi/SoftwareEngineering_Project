@@ -4,22 +4,37 @@
  */
 package group_project_software;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 /**
  *
  * @author LAYAN
  */
 public class Assignment {
-    private Date issueDate;
-    private Date deadlineDate;
-    private String assignmentDetails;
+    private String details;
+    private LocalDate deadlineDate;
+    private String Title;
 
-    public Assignment(Date issueDate, Date deadlineDate, String assignmentDetails) {
-        this.issueDate = issueDate;
+    public Assignment(String Title,String details, LocalDate deadlineDate) {
         this.deadlineDate = deadlineDate;
-        this.assignmentDetails = assignmentDetails;
+        this.details = details;
+        this.Title = Title;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+
+    public LocalDate getDeadlineDate() {
+        return deadlineDate;
+    }
+
+    public String getTitle() {
+        return Title;
     }
     
     
 }
+

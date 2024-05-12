@@ -21,7 +21,13 @@ public class Student extends User {
         this.courseNam = courseNam;
     }
 
+    public Student(String name) {
+        this.name=name;
+    }
     
+    public String getName(){
+        return name;
+    }
     
     public void sendMessage(Student student, String messageContent) {
         Message message = new Message(messageContent, name);
