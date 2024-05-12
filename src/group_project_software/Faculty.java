@@ -48,7 +48,7 @@ public class Faculty extends User {
    public Faculty(String Fname ,int ID ){
    
       super(Fname , ID);
-   
+      addFaculty(ID);
    
    }
    
