@@ -35,7 +35,7 @@ public class Group_Project_Software {
         Faculty f2 =new Faculty("nada",123789);
         Manager M1 = new Manager("rehab",1357);
         
-        Manager.deleteFaculity(1357, 123456);
+        Manager.deleteFaculity(1357,123456);
         
         System.out.println("");
 
