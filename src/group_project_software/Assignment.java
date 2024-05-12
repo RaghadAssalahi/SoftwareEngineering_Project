@@ -13,11 +13,11 @@ import java.time.LocalDate;
  */
 public class Assignment {
     private String details;
-    private LocalDate deadlineDate;
+    private LocalDate submissiondate;
     private String Title;
 
     public Assignment(String Title,String details, LocalDate deadlineDate) {
-        this.deadlineDate = deadlineDate;
+        this.submissiondate = deadlineDate;
         this.details = details;
         this.Title = Title;
     }
@@ -27,8 +27,8 @@ public class Assignment {
     }
 
 
-    public LocalDate getDeadlineDate() {
-        return deadlineDate;
+    public LocalDate Getsubmissiondate() {
+        return submissiondate;
     }
 
     public String getTitle() {

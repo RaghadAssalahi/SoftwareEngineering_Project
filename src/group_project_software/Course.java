@@ -95,7 +95,11 @@ public class Course {
         assignments.add(assignment);
     }
       
-      public void submitAssignment(Student student, Assignment assignment, String submission){
+     public void submitAssignment(Student student, Assignment assignment, String submission){
+          if( "submit".equals(submission))
           System.out.println(student.getName() + " submitted assignment: " + assignment.getTitle());
+          else
+              System.out.println("Please re-submit");
+          
       }
 }

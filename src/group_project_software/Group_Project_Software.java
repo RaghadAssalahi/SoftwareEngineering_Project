@@ -24,14 +24,9 @@ public class Group_Project_Software {
         Faculty f2 =new Faculty("nada",123789);
         Manager M1 = new Manager("rehab",1357);
         
-        Student student = new Student("Alice");
-        LocalDate deadline = LocalDate.parse("2024-05-20");// Parse the deadline string to LocalDate
-        String submission ="2024-05-19";
-        
-        Assignment assignment = new Assignment("Java Assignment", "Create a Java program", deadline);
+       
         
         Course course = new Course("Java Programming", "JAVA101");
-        course.submitAssignment(student, assignment, submission);
         Course javaCourse=new Course("12345","java",5);
         javaCourse.subscribeStudent("3456", "12345");
         javaCourse.subscribeStudent("345", "12345");
@@ -51,7 +46,7 @@ public class Group_Project_Software {
        Manager.deleteFaculity(1357,123456);
         
         System.out.println("-----------------------Learnsphere------------------------");
-        System.out.println("Press 1: ");
+        System.out.println("Press 1:To submit your assignment ");
         System.out.println("Press 2: ");
         System.out.println("Press 3: ");
         System.out.println("Press 4: if you want to search course");
@@ -60,6 +55,8 @@ public class Group_Project_Software {
         System.out.println("----------------------------------------------------------");
         
         
+        Student student = null; // Declare student variable
+        Assignment assignment = null; // Declare assignment variable
         String input;
         while (true) {
             System.out.print("\nYour choice (type 'exit' to quit): ");
@@ -80,7 +77,27 @@ public class Group_Project_Software {
             
             switch (choice) {
                 case 1:
-                    
+                    System.out.print("Enter student's name: ");
+        String studentName = in.nextLine();
+
+        // Create a Student object with the provided name
+        student = new Student(studentName);
+
+        // Take assignment details from user
+        System.out.print("Enter assignment title: ");
+        String title = in.nextLine();
+        System.out.print("Enter assignment details: ");
+        String details = in.nextLine();
+        System.out.print("Enter submission date (YYYY-MM-DD): ");
+        LocalDate submissiondate = LocalDate.parse(in.nextLine());
+        System.out.print("Enter submission (submit / not submitted): ");
+        String submission = in.nextLine();
+
+        // Create assignment object
+        assignment = new Assignment(title, details, submissiondate);
+
+        // Call course.submitAssignment(student, assignment, submission) to submit the assignment
+        javaCourse.submitAssignment(student, assignment, submission);
                     break;
                     
                 case 2:
