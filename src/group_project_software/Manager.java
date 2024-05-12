@@ -16,8 +16,7 @@ public class Manager extends User{
    private String salary;
    private static int [] all_Manager_ID =new int [100];
    private  static int i =0 ;
-   private int MID;
-   private String FName;
+  
 
     public Manager(Date startDate, String jobTitle, String salary, String userFNme, String userLNme, int userID, String userEmail, String userPass, String userSpecilization) {
         super(userFNme, userLNme, userID, userEmail, userPass, userSpecilization);
@@ -28,20 +27,19 @@ public class Manager extends User{
     }
    
     public Manager(String FName,int MID){
-       this.MID=MID;
-       this.FName=FName;
-    
+       super(FName,MID);
+       addManager(MID);
     
     }
     
     public static String deleteFaculity(int IDManager,int IDFaculty){
     
-           if(  -1 ==( Arrays.binarySearch(getAll_Manager_ID(),IDManager)) ){
+           if(  0 >( Arrays.binarySearch(getAll_Manager_ID(),IDManager)) ){
            
                System.out.println("You don't have authorization to delete faculty");
                return "You don't have authorization to delete faculty" ;
                
-           }else if(-1 == Arrays.binarySearch( Faculty.all_faculty_ID , IDFaculty )){
+           }else if(0 > Arrays.binarySearch( Faculty.all_faculty_ID , IDFaculty )){
            
            
                System.out.println("There is no Instructor with this ID");
@@ -60,9 +58,9 @@ public class Manager extends User{
                
                }else if(answer.equalsIgnoreCase("yes")){
                
-                   int index= Arrays.binarySearch( Faculty.all_faculty_ID , IDFaculty );
+                   int index = Arrays.binarySearch( Faculty.all_faculty_ID , IDFaculty );
                    
-                   Faculty.all_faculty_ID[index]=-1;
+                   Faculty.all_faculty_ID[index] = -1;
                }
                
            
