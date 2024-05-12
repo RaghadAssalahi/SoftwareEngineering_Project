@@ -34,6 +34,10 @@ public class Manager extends User{
     
     public static String deleteFaculity(int IDManager,int IDFaculty){
     
+        
+        Arrays.sort(all_Manager_ID);
+        Arrays.sort(Faculty.all_faculty_ID);
+        
            if(  0 >( Arrays.binarySearch(getAll_Manager_ID(),IDManager)) ){
            
                System.out.println("You don't have authorization to delete faculty");

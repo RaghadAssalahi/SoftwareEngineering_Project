@@ -17,11 +17,19 @@ public class Group_Project_Software {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         Student student = new Student("Alice");
-        LocalDate deadline = LocalDate.parse("2024-05-20"); // Parse the deadline string to LocalDate
+        
+        Faculty f1 =new Faculty("wejdan",123456);
+        Faculty f2 =new Faculty("nada",123789);
+        Manager M1 = new Manager("rehab",1357);
+        
+        Student student = new Student("Alice");
+        LocalDate deadline = LocalDate.parse("2024-05-20");// Parse the deadline string to LocalDate
+        String submission ="2024-05-19";
+        
         Assignment assignment = new Assignment("Java Assignment", "Create a Java program", deadline);
+        
         Course course = new Course("Java Programming", "JAVA101");
-
+        course.submitAssignment(student, assignment, submission);
         Course javaCourse=new Course("12345","java",5);
         javaCourse.subscribeStudent("3456", "12345");
         javaCourse.subscribeStudent("345", "12345");
@@ -37,11 +45,7 @@ public class Group_Project_Software {
         javaCourse.searchCourse();
         
         System.out.println("");
-        
-        Faculty f1 =new Faculty("wejdan",123456);
-        Faculty f2 =new Faculty("nada",123789);
-        Manager M1 = new Manager("rehab",1357);
-        
+       
         Manager.deleteFaculity(1357,123456);
         
         System.out.println("");
