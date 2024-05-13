@@ -43,14 +43,14 @@ public class Group_Project_Software {
         
         System.out.println("");
        
-       Manager.deleteFaculity(1357,123456);
+       
         
         System.out.println("-----------------------Learnsphere------------------------");
         System.out.println("Press 1:To submit your assignment ");
         System.out.println("Press 2: ");
         System.out.println("Press 3: ");
         System.out.println("Press 4: if you want to search course");
-        System.out.println("Press 5: ");
+        System.out.println("Press 5: If you are the manager and you want to delete a faculty member");
         
         System.out.println("----------------------------------------------------------");
         
@@ -115,6 +115,13 @@ public class Group_Project_Software {
                     break;
                     
                 case 5:
+                    
+                    
+                    System.out.println("Enter your ID number (you must be the manager):");
+                    int manager_ID = in.nextInt();
+                    System.out.println("Enter the ID number of the faculty member :");
+                    int faculty_ID = in.nextInt();
+                    Manager.deleteFaculity(manager_ID,faculty_ID);
                     
                     break;
                     
