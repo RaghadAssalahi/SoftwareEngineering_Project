@@ -52,8 +52,8 @@ public class Manager extends User{
            }else {
            
                Scanner input=new Scanner(System.in);
-               System.out.print("Are you sure you want to delete the faculty member with ID ="+IDFaculty+"? "+"(yes/no)");
-               String answer=input.next().toLowerCase();
+               System.out.print("Are you sure you want to delete the faculty member with ID ="+IDFaculty+"? "+"(yes/no) : ");
+               String answer =input.next().toLowerCase();
                
                if(answer.equalsIgnoreCase("no")){
                
@@ -65,15 +65,12 @@ public class Manager extends User{
                    int index = Arrays.binarySearch( Faculty.all_faculty_ID , IDFaculty );
                    
                    Faculty.all_faculty_ID[index] = -1;
+                   System.out.println("The deletion process was completed successfully");
                }
-               
-           
-               
+
                }
-               
-               System.out.println("The deletion process was completed successfully");
-               return "The deletion process was completed successfully";
-    
+            
+               return "The deletion process was completed successfully"; 
     }
    
     
