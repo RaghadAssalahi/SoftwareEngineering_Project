@@ -67,7 +67,7 @@ public class Course {
           }else
               System.out.println("there is no capasity in the "+getCourseName()+" course");
       }else
-          System.out.println("there is no course in this name "+getCourseName()+" course");
+          System.out.println("there is no course with this ID ");
   }
   
   
