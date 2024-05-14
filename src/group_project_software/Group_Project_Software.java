@@ -19,10 +19,7 @@ public class Group_Project_Software {
     public static void main(String[] args) {
         // TODO code application logic here
          Scanner in=new Scanner(System.in);
-         
-        Faculty f1 =new Faculty("wejdan",123456);
-        Faculty f2 =new Faculty("nada",123789);
-        Manager M1 = new Manager("rehab",1357);
+        
     
         System.out.println("");
         
@@ -36,11 +33,12 @@ public class Group_Project_Software {
        
         
         System.out.println("-----------------------Learnsphere------------------------");
-        System.out.println("Press 1:To submit your assignment ");
+        System.out.println("Press 1: To submit your assignment ");
         System.out.println("Press 2: To add a course ");
         System.out.println("Press 3: To subscribe in a course");
         System.out.println("Press 4: if you want to search course");
         System.out.println("Press 5: If you are the manager and you want to delete a faculty member");
+        System.out.println("Press 6: To send a message to the faculty");
         
         System.out.println("----------------------------------------------------------");
         
@@ -123,15 +121,36 @@ public class Group_Project_Software {
                     
                 case 5:
                     
-                    //
+                    // Create objects of type Faculty
+                    Faculty f1 =new Faculty("wejdan",123456);
+                    Faculty f2 =new Faculty("nada",123789);
+                    // Create object of type Manager
+                    Manager M1 = new Manager("rehab",1357);
+                    
+                    // Ask the user to enter the required data
                     System.out.println("Enter your ID number (you must be the manager):");
                     int manager_ID = in.nextInt();
                     System.out.println("Enter the ID number of the faculty member :");
                     int faculty_ID = in.nextInt();
+                    
+                    // Call method to delete a faculty member
                     Manager.deleteFaculity(manager_ID,faculty_ID);
                     
                     break;
+                  
+                case 6:
+                    System.out.print("write the message you want to send to the Instructor :");
+                    System.out.println("");
+                    String message =in.nextLine(); //
+                    System.out.print("Enter your name:");
+                    System.out.println("");
+                    String name=in.next();//
+                    student = new Student(name);//
+                    student.sendMessage(student, message);//
+                    System.out.println("The message was sent successfully");
                     
+                    
+                    break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
                     break;
