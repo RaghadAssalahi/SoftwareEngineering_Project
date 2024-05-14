@@ -23,17 +23,7 @@ public class Group_Project_Software {
         Faculty f1 =new Faculty("wejdan",123456);
         Faculty f2 =new Faculty("nada",123789);
         Manager M1 = new Manager("rehab",1357);
-        
-       
-        
-        Course course = new Course("Java Programming", "JAVA101");
-        Course javaCourse=new Course("12345","java",5);
-        javaCourse.subscribeStudent("3456", "12345");
-        javaCourse.subscribeStudent("345", "12345");
-        javaCourse.subscribeStudent("34", "12345");
-        javaCourse.subscribeStudent("3457", "12345");
-        javaCourse.subscribeStudent("3457", "12345");
-        
+    
         System.out.println("");
         
 //        javaCourse.addCourse(new Course("CS101", "Introduction to Computer Science", 30));
@@ -47,8 +37,8 @@ public class Group_Project_Software {
         
         System.out.println("-----------------------Learnsphere------------------------");
         System.out.println("Press 1:To submit your assignment ");
-        System.out.println("Press 2: ");
-        System.out.println("Press 3: ");
+        System.out.println("Press 2: To add a course ");
+        System.out.println("Press 3: To subscribe in a course");
         System.out.println("Press 4: if you want to search course");
         System.out.println("Press 5: If you are the manager and you want to delete a faculty member");
         
@@ -57,8 +47,10 @@ public class Group_Project_Software {
         
         Student student = null; // Declare student variable
         Assignment assignment = null; // Declare assignment variable
+        Course javaCourse=new Course("12345","java",5);
+        Course newCourse=null;
         String input;
-        while (true) {
+        while(true) {
             System.out.print("\nYour choice (type 'exit' to quit): ");
             input = in.nextLine();
             System.out.println("");
@@ -101,15 +93,30 @@ public class Group_Project_Software {
                     break;
                     
                 case 2:
-                   
-                    
+                    //ask the user about new course infi
+                   System.out.print("Enter course's ID : ");
+                   String courseid = in.nextLine();
+                   System.out.print("Enter course's name : ");
+                   String courseName = in.nextLine();
+                   System.out.print("Enter course's capacity : ");
+                   int courseCapacity = in.nextInt();
+                   //add new course to the website
+                   newCourse=new Course(courseid,courseName,courseCapacity);
                     
                     break;
                     
                 case 3:
+                  try{
+                   System.out.print("Enter student's ID : ");
+                   String studentID = in.nextLine();
+                   System.out.print("Enter course's ID : ");
+                   String courseID = in.nextLine();
+                   newCourse.subscribeStudent(studentID, courseID);
                    
-                    break;
-                    
+                  }catch(NullPointerException e){
+                      System.out.println("There is no course with this ID, first you must add the course then the student can subscrib ");
+                  }
+                     break;
                 case 4:
                     javaCourse.searchCourse();
                     break;
