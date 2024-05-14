@@ -21,16 +21,6 @@ public class Group_Project_Software {
          Scanner in=new Scanner(System.in);
         
     
-        System.out.println("");
-        
-//        javaCourse.addCourse(new Course("CS101", "Introduction to Computer Science", 30));
-//        javaCourse.addCourse(new Course("MA101", "Calculus I", 40));
-//        
-//        javaCourse.searchCourse();
-        
-        System.out.println("");
-       
-       
         
         System.out.println("-----------------------Learnsphere------------------------");
         System.out.println("Press 1: To submit your assignment ");
@@ -90,18 +80,20 @@ public class Group_Project_Software {
         javaCourse.submitAssignment(student, assignment, submission);
                     break;
                     
-                case 2:
-                    //ask the user about new course infi
-                   System.out.print("Enter course's ID : ");
-                   String courseid = in.nextLine();
-                   System.out.print("Enter course's name : ");
-                   String courseName = in.nextLine();
-                   System.out.print("Enter course's capacity : ");
-                   int courseCapacity = in.nextInt();
-                   //add new course to the website
-                   newCourse=new Course(courseid,courseName,courseCapacity);
-                    
+               case 2:
+                    // Ask the user about new course info
+                    System.out.print("Enter course's ID : ");
+                    String courseid = in.nextLine();
+                    System.out.print("Enter course's name : ");
+                    String courseName = in.nextLine();
+                    System.out.print("Enter course's capacity : ");
+                    int courseCapacity = in.nextInt();
+                    in.nextLine(); // Consume the leftover newline
+
+                    // Add new course to the website
+                    newCourse = new Course(courseid, courseName, courseCapacity);
                     break;
+
                     
                 case 3:
                   try{
@@ -116,6 +108,7 @@ public class Group_Project_Software {
                   }
                      break;
                 case 4:
+                    //Call method search course  
                     javaCourse.searchCourse();
                     break;
                     

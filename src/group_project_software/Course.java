@@ -70,17 +70,24 @@ public class Course {
           System.out.println("there is no course in this name "+getCourseName()+" course");
   }
   
-   // Method to search for a course by name
-    // Updated method to search for a course by ID
+  
+    //method to search for a course 
     public void searchCourse() {
         Scanner scanner = new Scanner(System.in);
+        
+        // Prompt the user to enter a course ID or 'exit' to stop
         System.out.print("Enter the course ID to search or type 'exit' to stop:");
+       
         while (scanner.hasNextLine()) {
             String input = scanner.nextLine();
+            
+            // Check if the user wants to exit the search
             if ("exit".equalsIgnoreCase(input)) {
                 System.out.println("Exiting search...");
                 break;
             }
+            
+            // Check if the course ID is in the list of courses
             if (courses.contains(input)) {
                 System.out.println("The course with ID " + input + " is found.");
             } else {
