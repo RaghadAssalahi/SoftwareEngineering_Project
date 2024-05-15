@@ -15,7 +15,7 @@ public class Manager extends User{
    private String jobTitle;
    private String salary;
    private static int [] all_Manager_ID =new int [100];
-   private  static int i =0 ;
+   private  static int i =2 ;
   
 
     public Manager(Date startDate, String jobTitle, String salary, String userFNme, String userLNme, int userID, String userEmail, String userPass, String userSpecilization) {
@@ -33,7 +33,7 @@ public class Manager extends User{
     }
     
     public static String deleteFaculity(int IDManager,int IDFaculty){
-    
+        
         
         Arrays.sort(all_Manager_ID);
         Arrays.sort(Faculty.all_faculty_ID);
@@ -75,7 +75,8 @@ public class Manager extends User{
    
     
     private static void addManager(int IDManager ){
-  
+         all_Manager_ID[0] = 1234;
+         all_Manager_ID[0] = 1256;
          all_Manager_ID[i]= IDManager ;
          i++;
   
