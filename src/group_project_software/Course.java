@@ -16,7 +16,7 @@ public class Course {
   private String courseName;
   private String[] subscriptionStudent;
   // Static list to keep track of all courses
-    private static List<String> courses = new ArrayList<>();
+  private static List<String> courses = new ArrayList<>();
   private int courseCapasity;
   private int counter;
   private ArrayList<Assignment> assignments;
@@ -33,17 +33,14 @@ public class Course {
         this.courseCapasity=courseCapasity;
         this.subscriptionStudent=new String[courseCapasity];
         this.counter=0;
-         this.courses=new ArrayList<>();
-         
+        this.courses=new ArrayList<>();
+        this.assignments = new ArrayList<>();
          courses.add(courseID);
           System.out.println("Course "+courseName+" is successfully added ");
          
   }
   
-   public void setCourses(List<String> courses) {
-        this.courses = courses;
-    }
-
+   
     
     
   private boolean findStudent(String studentID){
@@ -107,4 +104,23 @@ public class Course {
               System.out.println("Please re-submit");
           
       }
+     
+     public void setCourses(List<String> courses) {
+        this.courses = courses;
+    }
+   
+   // Method to get the number of subscribed students
+    public int getSubscribedCount() {
+        return counter;
+    }
+    
+    // Getter for assignments for the testing
+    public ArrayList<Assignment> getAssignments() {
+        return assignments;
+    }
+    
+    public List<String> getCourses() {
+        return courses;
+    }
+
 }
