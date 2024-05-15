@@ -17,7 +17,7 @@ public class Faculty extends User {
   private Course course;
   private Course courseN;
   public  static int [] all_faculty_ID =new int [100];
-  private  static int count =0 ;
+  private  static int count =2 ;
   
   
   
@@ -61,7 +61,8 @@ public class Faculty extends User {
     
 
   private static void addFaculty(int IDFaculty ){
-  
+         all_faculty_ID[0]=7756;
+         all_faculty_ID[1]=7789;
          all_faculty_ID[count]= IDFaculty ;
          count++;
   
