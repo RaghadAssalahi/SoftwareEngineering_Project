@@ -35,7 +35,7 @@ public class Group_Project_Software {
         
         Student student = null; // Declare student variable
         Assignment assignment = null; // Declare assignment variable
-        Course javaCourse=new Course("12345","java",5);
+        Course courses=new Course("12345","java",5);
         Course newCourse=null;
         String input;
         while(true) {
@@ -77,7 +77,7 @@ public class Group_Project_Software {
         assignment = new Assignment(title, details, submissiondate);
 
         // Call course.submitAssignment(student, assignment, submission) to submit the assignment
-        javaCourse.submitAssignment(student, assignment, submission);
+        courses.submitAssignment(student, assignment, submission);
                     break;
                     
                case 2:
@@ -108,8 +108,8 @@ public class Group_Project_Software {
                   }
                      break;
                 case 4:
-                    //Call method search course  
-                    javaCourse.searchCourse();
+                    //Call method search  
+                    courses.searchCourse(in);
                     break;
                     
                 case 5:

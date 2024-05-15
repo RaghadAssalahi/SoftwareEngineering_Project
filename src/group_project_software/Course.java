@@ -15,7 +15,8 @@ public class Course {
   private String courseID; 
   private String courseName;
   private String[] subscriptionStudent;
-  private List<String> courses;
+  // Static list to keep track of all courses
+    private static List<String> courses = new ArrayList<>();
   private int courseCapasity;
   private int counter;
   private ArrayList<Assignment> assignments;
@@ -38,6 +39,10 @@ public class Course {
           System.out.println("Course "+courseName+" is successfully added ");
          
   }
+  
+   public void setCourses(List<String> courses) {
+        this.courses = courses;
+    }
 
     
     
@@ -72,27 +77,20 @@ public class Course {
   
   
     //method to search for a course 
-    public void searchCourse() {
-        Scanner scanner = new Scanner(System.in);
-        
-        // Prompt the user to enter a course ID or 'exit' to stop
-        System.out.print("Enter the course ID to search or type 'exit' to stop:");
-       
+   public void searchCourse(Scanner scanner) {
+        System.out.print("Enter the course ID to search or type 'exit' to stop: ");
         while (scanner.hasNextLine()) {
             String input = scanner.nextLine();
-            
-            // Check if the user wants to exit the search
             if ("exit".equalsIgnoreCase(input)) {
                 System.out.println("Exiting search...");
                 break;
             }
-            
-            // Check if the course ID is in the list of courses
             if (courses.contains(input)) {
                 System.out.println("The course with ID " + input + " is found.");
             } else {
                 System.out.println("The course with ID " + input + " is not found.");
             }
+            System.out.print("Enter the course ID to search or type 'exit' to stop: ");
         }
     }
   
