@@ -70,7 +70,6 @@ public class AssignmentTest {
      *
      */
     
-    
     @Test
     public void testGetTitle() {
         System.out.println("getTitle");
