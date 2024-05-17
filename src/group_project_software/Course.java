@@ -12,14 +12,15 @@ import java.util.Scanner;
  * @author LAYAN
  */
 public class Course {
-  private String courseID; 
-  private String courseName;
-  private String[] subscriptionStudent;
-  // Static list to keep track of all courses
-  private static List<String> courses = new ArrayList<>();
-  private int courseCapasity;
-  private int counter;
-  private ArrayList<Assignment> assignments;
+    private String courseID; // ID of the course
+    private String courseName; // Name of the course
+    private String[] subscriptionStudent; // Array to store subscribed student IDs
+    // Static list to keep track of all courses
+    private static List<String> courses = new ArrayList<>();
+    private int courseCapasity; // Maximum capacity of the course
+    private int counter; // Counter for subscribed students
+    private ArrayList<Assignment> assignments; // List of assignments for the course
+
   
   public Course(String courseName, String courseID){
       this.courseName=courseName;
@@ -27,6 +28,8 @@ public class Course {
       this.assignments=new ArrayList<>();
       
   }
+  
+  //Constructor to initialize a Course object with course ID, course name, and course capacity.
   public Course(String courseID, String courseName, int courseCapasity) {
         this.courseID = courseID;
         this.courseName = courseName;
@@ -42,7 +45,7 @@ public class Course {
   
    
     
-    
+   // Private method to find if a student is already subscribed to the course. 
   private boolean findStudent(String studentID){
       for(int i=0; i<subscriptionStudent.length;i++){
          if(subscriptionStudent[i]!=null&&!subscriptionStudent[i].isEmpty()){
@@ -51,11 +54,13 @@ public class Course {
       }}
       return false;
   }
-
+    
+    // Getter method for the course name.
     public String getCourseName() {
         return courseName;
     }
-  
+    
+  //Method to subscribe a student to the course.
   public void subscribeStudent(String studentID, String courseid){
       if(courses.contains(courseid)){
           if(counter<courseCapasity){
@@ -73,7 +78,7 @@ public class Course {
   }
   
   
-    //method to search for a course 
+     //Method to search for a course by its ID.
    public void searchCourse(Scanner scanner) {
         System.out.print("Enter the course ID to search or type 'exit' to stop: ");
         while (scanner.hasNextLine()) {
@@ -92,11 +97,11 @@ public class Course {
     }
   
 
-    
+      //Method to add an assignment to the course.
       public void addAssignment(Assignment assignment){
         assignments.add(assignment);
     }
-      
+      //Method to submit an assignment for a student.
      public void submitAssignment(Student student, Assignment assignment, String submission){
           if( "submit".equals(submission))
           System.out.println(student.getName() + " submitted assignment: " + assignment.getTitle());
@@ -105,6 +110,7 @@ public class Course {
           
       }
      
+     //Setter method for the list of courses.
      public void setCourses(List<String> courses) {
         this.courses = courses;
     }
@@ -119,6 +125,7 @@ public class Course {
         return assignments;
     }
     
+    // Getter method for the list of courses.
     public List<String> getCourses() {
         return courses;
     }

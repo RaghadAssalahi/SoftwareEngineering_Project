@@ -1,4 +1,3 @@
-
 package group_project_software;
 
 /**
@@ -6,22 +5,24 @@ package group_project_software;
  * @author reemajez
  */
 class Message {
-            
-    private String content;
-    private String sender;
+    private String content; // The content of the message
+    private String sender;  // The sender of the message
 
-    Message(String messageContent, String name) {
-        this.content = content;
+    // Constructor to initialize a Message object.
+    Message(String messageContent, String sender) {
+        this.content = messageContent;
         this.sender = sender;
     }
- 
-   
+
+    // Getter for the content of the message.
     public String getContent() {
         return content;
     }
 
+    // Getter for the sender of the message.
     public String getSender() {
         return sender;
     }
-    
 }
+
+

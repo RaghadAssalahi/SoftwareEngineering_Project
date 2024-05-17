@@ -21,7 +21,7 @@ public class Group_Project_Software {
          Scanner in=new Scanner(System.in);
         
     
-        
+         // Display the menu options
         System.out.println("-----------------------Learnsphere------------------------");
         System.out.println("Press 1: To submit your assignment ");
         System.out.println("Press 2: To add a course ");
@@ -33,11 +33,13 @@ public class Group_Project_Software {
         System.out.println("----------------------------------------------------------");
         
         
+        // Initialize necessary variables
         Student student = null; // Declare student variable
         Assignment assignment = null; // Declare assignment variable
-        Course courses=new Course("12345","java",5);
-        Course newCourse=null;
-        String input;
+        Course courses = new Course("12345", "java", 5); // Create a default course
+        Course newCourse = null; // Declare new course variable
+        String input; // Variable to store user input
+        
         while(true) {
             System.out.print("\nYour choice (type 'exit' to quit): ");
             input = in.nextLine();
@@ -57,30 +59,34 @@ public class Group_Project_Software {
             
             switch (choice) {
                 case 1:
+                    // Submit an assignment
+                    
                     System.out.print("Enter student's name: ");
-        String studentName = in.nextLine();
+                    String studentName = in.nextLine();
 
-        // Create a Student object with the provided name
-        student = new Student(studentName);
+                  // Create a Student object with the provided name
+                       student = new Student(studentName);
 
-        // Take assignment details from user
-        System.out.print("Enter assignment title: ");
-        String title = in.nextLine();
-        System.out.print("Enter assignment details: ");
-        String details = in.nextLine();
-        System.out.print("Enter submission date (YYYY-MM-DD): ");
-        LocalDate submissiondate = LocalDate.parse(in.nextLine());
-        System.out.print("Enter submission (submit / not submitted): ");
-        String submission = in.nextLine();
+                  // Take assignment details from user
+                  System.out.print("Enter assignment title: ");
+                  String title = in.nextLine();
+                  System.out.print("Enter assignment details: ");
+                  String details = in.nextLine();
+                  System.out.print("Enter submission date (YYYY-MM-DD): ");
+                  LocalDate submissiondate = LocalDate.parse(in.nextLine());
+                  System.out.print("Enter submission (submit / not submitted): ");
+                  String submission = in.nextLine();
 
-        // Create assignment object
-        assignment = new Assignment(title, details, submissiondate);
+                   // Create assignment object
+                    assignment = new Assignment(title, details, submissiondate);
 
-        // Call course.submitAssignment(student, assignment, submission) to submit the assignment
-        courses.submitAssignment(student, assignment, submission);
+                   // Call course.submitAssignment(student, assignment, submission) to submit the assignment
+                   courses.submitAssignment(student, assignment, submission);
                     break;
                     
                case 2:
+                   // Add a new course
+                   
                     // Ask the user about new course info
                     System.out.print("Enter course's ID : ");
                     String courseid = in.nextLine();
@@ -96,6 +102,8 @@ public class Group_Project_Software {
 
                     
                 case 3:
+                    // Subscribe a student to a course
+                    
                   try{
                    System.out.print("Enter student's ID : ");
                    String studentID = in.nextLine();
@@ -108,11 +116,14 @@ public class Group_Project_Software {
                   }
                      break;
                 case 4:
+                    // Search for a course
+                    
                     //Call method search  
                     courses.searchCourse(in);
                     break;
                     
                 case 5:
+                    // Delete a faculty member
                     
                     // Create objects of type Faculty
                     Faculty f1 =new Faculty("wejdan",123456);
@@ -132,6 +143,8 @@ public class Group_Project_Software {
                     break;
                   
                 case 6:
+                    // Send a message to the faculty
+                    
                     System.out.print("write the message you want to send to the Instructor :");
                     System.out.println("");
                     String message =in.nextLine(); //

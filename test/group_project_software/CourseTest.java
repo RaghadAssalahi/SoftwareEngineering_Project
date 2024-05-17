@@ -45,6 +45,8 @@ public class CourseTest {
     
     @Before
     public void setUp() {
+        // Set up resources before each test
+        
         course = new Course("java", "CSE101", 30);
         List<String> courses = new ArrayList<>();
         courses.add("CSE101");
@@ -70,6 +72,7 @@ public class CourseTest {
     /**
      * Test of subscribeStudent method, of class Course.
      */
+    //Test of subscribeStudent method for adding a new student.
      @Test
     public void testSubscribeStudentNew() {
         System.out.println("subscribeStudentNew");
@@ -81,7 +84,7 @@ public class CourseTest {
         int result = instance.getSubscribedCount();
         assertEquals(expResult, result);
     }
-
+// Test of subscribeStudent method for adding a duplicate student.
     @Test
     public void testSubscribeStudentDuplicate() {
         System.out.println("subscribeStudentDuplicate");
@@ -94,7 +97,7 @@ public class CourseTest {
         int result = instance.getSubscribedCount();
         assertEquals(expResult, result);
     }
-
+//Test of subscribeStudent method when the course is full.
     @Test
     public void testSubscribeStudentFull() {
         System.out.println("subscribeStudentFull");
@@ -110,7 +113,7 @@ public class CourseTest {
         int result = instance.getSubscribedCount();
         assertEquals(expResult, result);
     }
-
+//Test of subscribeStudent method for a non-existent course.
     @Test
     public void testSubscribeStudentNonExistentCourse() {
         System.out.println("subscribeStudentNonExistentCourse");

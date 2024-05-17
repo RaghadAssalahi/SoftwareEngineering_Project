@@ -11,13 +11,14 @@ import java.util.*;
  * @author LAYAN
  */
 public class Manager extends User{
-   private Date startDate;
-   private String jobTitle;
-   private String salary;
-   private static int [] all_Manager_ID =new int [100];
-   private  static int i =2 ;
+  private Date startDate; // Start date of the manager
+    private String jobTitle; // Job title of the manager
+    private String salary; // Salary of the manager
+    private static int[] all_Manager_ID = new int[100]; // Static array to keep track of all manager IDs
+    private static int i = 2; // Counter for manager IDs
   
-
+   
+    //Constructor to initialize a Manager object with all attributes.
     public Manager(Date startDate, String jobTitle, String salary, String userFNme, String userLNme, int userID, String userEmail, String userPass, String userSpecilization) {
         super(userFNme, userLNme, userID, userEmail, userPass, userSpecilization);
         this.startDate = startDate;
@@ -26,12 +27,14 @@ public class Manager extends User{
         addManager(userID);
     }
    
+    //Constructor to initialize a Manager object with only name and ID.
     public Manager(String FName,int MID){
        super(FName,MID);
        addManager(MID);
     
     }
     
+    //Static method to delete a faculty member.
     public static String deleteFaculity(int IDManager,int IDFaculty){
         
         
@@ -73,7 +76,8 @@ public class Manager extends User{
                return "The deletion process was completed successfully"; 
     }
    
-    
+    /// Private static method to add a manager ID to the static array of all manager IDs.
+     
     private static void addManager(int IDManager ){
          all_Manager_ID[0] = 1234;
          all_Manager_ID[0] = 1256;
@@ -81,7 +85,7 @@ public class Manager extends User{
          i++;
   
   }
-
+//Getter method for the static array of all manager IDs.
     public static int[] getAll_Manager_ID() {
         return all_Manager_ID;
     }
