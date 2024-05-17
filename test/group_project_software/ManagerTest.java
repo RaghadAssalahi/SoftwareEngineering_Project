@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author asus
+ * 
  */
 public class ManagerTest {
     
@@ -40,6 +40,8 @@ public class ManagerTest {
     /**
      * Test of deleteFaculity method, of class Manager.
      */
+    
+    
     //Test of deleteFaculity method for successful deletion.
     @Test
     public void testDeleteFaculity_successfully() {
@@ -51,17 +53,9 @@ public class ManagerTest {
         assertEquals(expResult, result);
         
     }
-//Test of deleteFaculity method when deletion is cancelled.
-  @Test
-    public void testDeleteFaculity_cancelled() {
-        System.out.println("deleteFaculity");
-        int IDManager = 1234;
-        int IDFaculty = 7756;
-        String expResult = "The deletion has been cancelled";
-        String result = Manager.deleteFaculity(IDManager, IDFaculty);
-        assertEquals(expResult, result);
-        
-    }
+
+    
+    
     // Test of deleteFaculity method when manager does not have authorization.
      public void testDeleteFaculity_authorization_M() {
         System.out.println("deleteFaculity");

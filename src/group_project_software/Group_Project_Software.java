@@ -128,13 +128,14 @@ public class Group_Project_Software {
                     // Delete a faculty member
                     
                     // Create objects of type Faculty
-                    Faculty f1 =new Faculty("wejdan",123456);
-                    Faculty f2 =new Faculty("nada",123789);
+                    Faculty f1 =new Faculty("wejdan",7770);
+                    Faculty f2 =new Faculty("nada",7700);
                     // Create object of type Manager
                     Manager M1 = new Manager("rehab",1357);
                     
                     // Ask the user to enter the required data
                     System.out.print("Enter your ID number (you must be the manager):");
+                    System.out.println("");
                     int manager_ID = in.nextInt();
                     System.out.print("Enter the ID number of the faculty member :");
                     int faculty_ID = in.nextInt();

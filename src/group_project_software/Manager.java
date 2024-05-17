@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  *
- * @author LAYAN
+ * 
  */
 public class Manager extends User{
   private Date startDate; // Start date of the manager
@@ -37,7 +37,6 @@ public class Manager extends User{
     //Static method to delete a faculty member.
     public static String deleteFaculity(int IDManager,int IDFaculty){
         
-        
         Arrays.sort(all_Manager_ID);
         Arrays.sort(Faculty.all_faculty_ID);
         
@@ -54,22 +53,12 @@ public class Manager extends User{
            
            }else {
            
-               Scanner input=new Scanner(System.in);
-               System.out.print("Are you sure you want to delete the faculty member with ID ="+IDFaculty+"? "+"(yes/no) : ");
-               String answer =input.next().toLowerCase();
-               
-               if(answer.equalsIgnoreCase("no")){
-               
-                   System.out.println("The deletion has been cancelled");
-                   return "The deletion has been cancelled" ;
-               
-               }else if(answer.equalsIgnoreCase("yes")){
                
                    int index = Arrays.binarySearch( Faculty.all_faculty_ID , IDFaculty );
                    
                    Faculty.all_faculty_ID[index] = -1;
                    System.out.println("The deletion process was completed successfully");
-               }
+               
 
                }
             
