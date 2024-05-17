@@ -98,6 +98,8 @@ public class Group_Project_Software {
 
                     // Add new course to the website
                     newCourse = new Course(courseid, courseName, courseCapacity);
+                    System.out.println("Course " + courseName + " is successfully added");
+                    
                     break;
 
                     
@@ -132,10 +134,12 @@ public class Group_Project_Software {
                     Manager M1 = new Manager("rehab",1357);
                     
                     // Ask the user to enter the required data
-                    System.out.println("Enter your ID number (you must be the manager):");
+                    System.out.print("Enter your ID number (you must be the manager):");
                     int manager_ID = in.nextInt();
-                    System.out.println("Enter the ID number of the faculty member :");
+                    System.out.print("Enter the ID number of the faculty member :");
                     int faculty_ID = in.nextInt();
+                    
+                    in.nextLine(); // Consume the leftover newline
                     
                     // Call method to delete a faculty member
                     Manager.deleteFaculity(manager_ID,faculty_ID);
@@ -154,6 +158,8 @@ public class Group_Project_Software {
                     student = new Student(name);//
                     student.sendMessage(student, message);//
                     System.out.println("The message was sent successfully");
+                    
+                    in.nextLine(); // Consume the leftover newline
                     
                     
                     break;

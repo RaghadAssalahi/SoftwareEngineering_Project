@@ -39,7 +39,7 @@ public class Course {
         this.courses=new ArrayList<>();
         this.assignments = new ArrayList<>();
          courses.add(courseID);
-          System.out.println("Course "+courseName+" is successfully added ");
+          
          
   }
   
