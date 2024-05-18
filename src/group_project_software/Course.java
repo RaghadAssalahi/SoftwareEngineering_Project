@@ -59,18 +59,16 @@ public class Course {
     public String getCourseName() {
         return courseName;
     }
-    
   //Method to subscribe a student to the course.
   public void subscribeStudent(String studentID, String courseid){
       if(courses.contains(courseid)){
           if(counter<courseCapasity){
               if(!findStudent(studentID)){
-                  subscriptionStudent[counter]=studentID;
-                  System.out.println("student successfully subscribe in the "+getCourseName()+" course");
-                  counter++;
+                subscriptionStudent[counter]=studentID;
+                System.out.println("student successfully subscribe in the "+getCourseName()+" course");
+                counter++;
               }else
-                  System.out.println("student is already subscribe in the "+getCourseName()+" course");
-              
+                System.out.println("student is already subscribe in the "+getCourseName()+" course");              
           }else
               System.out.println("there is no capasity in the "+getCourseName()+" course");
       }else

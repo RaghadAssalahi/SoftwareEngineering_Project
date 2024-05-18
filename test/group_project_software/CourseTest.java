@@ -222,29 +222,29 @@ public class CourseTest {
     @Test
     public void testFindStudent() throws Exception {
         System.out.println("findStudent");
-
+        
         // Access the private method using reflection
         Method method = Course.class.getDeclaredMethod("findStudent", String.class);
         method.setAccessible(true);
-
+        
         // Test case 1: Student is not in the list
         String studentID = "student1";
         boolean expResult = false;
         boolean result = (boolean) method.invoke(course, studentID);
         assertEquals(expResult, result);
-
+        
         // Test case 2: Add a student and find it
         course.subscribeStudent(studentID, "CSE101");
         expResult = true;
         result = (boolean) method.invoke(course, studentID);
         assertEquals(expResult, result);
-
+        
         // Test case 3: Another student who is not in the list
         String newStudentID = "student2";
         expResult = false;
         result = (boolean) method.invoke(course, newStudentID);
         assertEquals(expResult, result);
-
+        
         // Test case 4: Add the new student and find it
         course.subscribeStudent(newStudentID, "CSE101");
         expResult = true;
