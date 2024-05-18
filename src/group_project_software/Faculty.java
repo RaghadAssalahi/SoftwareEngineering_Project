@@ -17,7 +17,7 @@ public class Faculty extends User {
     private Course course; // Course associated with the faculty member
     private Course courseN; // Additional course associated with the faculty member
     public static int[] all_faculty_ID = new int[100]; // Static array to keep track of all faculty IDs
-    private static int count = 2; // Counter for faculty IDs
+    public static int count = 0; // Counter for faculty IDs
   
   
   //Constructor to initialize a Faculty object with all attributes.
@@ -62,10 +62,8 @@ public class Faculty extends User {
     
 //Private method to add a faculty ID to the static array of all faculty IDs.
   private static void addFaculty(int IDFaculty ){
-         all_faculty_ID[0]=7756;
-         all_faculty_ID[1]=7789;
-         all_faculty_ID[count]= IDFaculty ;
-         count++;
+         all_faculty_ID[count] = IDFaculty;
+        count++;;
   
   }
 //Getter method for the static array of all faculty IDs.

@@ -15,7 +15,7 @@ public class Manager extends User{
     private String jobTitle; // Job title of the manager
     private String salary; // Salary of the manager
     private static int[] all_Manager_ID = new int[100]; // Static array to keep track of all manager IDs
-    private static int i = 2; // Counter for manager IDs
+    public static int i = 0; // Counter for manager IDs
   
    
     //Constructor to initialize a Manager object with all attributes.
@@ -35,43 +35,41 @@ public class Manager extends User{
     }
     
     //Static method to delete a faculty member.
-    public static String deleteFaculity(int IDManager,int IDFaculty){
-        
-        Arrays.sort(all_Manager_ID);
-        Arrays.sort(Faculty.all_faculty_ID);
-        
-           if(  0 >( Arrays.binarySearch(getAll_Manager_ID(),IDManager)) ){
-           
-               System.out.println("You don't have authorization to delete faculty");
-               return "You don't have authorization to delete faculty" ;
-               
-           }else if(0 > Arrays.binarySearch( Faculty.all_faculty_ID , IDFaculty )){
-           
-           
-               System.out.println("There is no Instructor with this ID");
-               return "There is no Instructor with this ID" ;
-           
-           }else {
-           
-               
-                   int index = Arrays.binarySearch( Faculty.all_faculty_ID , IDFaculty );
-                   
-                   Faculty.all_faculty_ID[index] = -1;
-                   System.out.println("The deletion process was completed successfully");
-               
+   public static String deleteFaculity(int IDManager, int IDFaculty) {
+    Arrays.sort(all_Manager_ID);
+    Arrays.sort(Faculty.all_faculty_ID);
 
-               }
-            
-               return "The deletion process was completed successfully"; 
+    // Check if the manager ID exists
+    if (0 > (Arrays.binarySearch(getAll_Manager_ID(), IDManager))) {
+        System.out.println("You don't have authorization to delete faculty");
+        return "You don't have authorization to delete faculty";
     }
+    // Check if the faculty ID exists
+    else if (0 > Arrays.binarySearch(Faculty.all_faculty_ID, IDFaculty)) {
+        System.out.println("There is no Instructor with this ID");
+        return "There is no Instructor with this ID";
+    } else {
+        int index = Arrays.binarySearch(Faculty.all_faculty_ID, IDFaculty);
+        // Ensure valid index before setting to -1
+        if (index >= 0) {
+            for (int i = index; i < Faculty.count - 1; i++) {
+                Faculty.all_faculty_ID[i] = Faculty.all_faculty_ID[i + 1];
+            }
+            Faculty.all_faculty_ID[Faculty.count - 1] = -1; // Set last element to -1
+            Faculty.count--; // Decrement the count
+            System.out.println("The deletion process was completed successfully");
+            return "The deletion process was completed successfully";
+        }
+        return "There is no Instructor with this ID";
+    }
+}
+
    
     /// Private static method to add a manager ID to the static array of all manager IDs.
      
     private static void addManager(int IDManager ){
-         all_Manager_ID[0] = 1234;
-         all_Manager_ID[0] = 1256;
-         all_Manager_ID[i]= IDManager ;
-         i++;
+         all_Manager_ID[i] = IDManager;
+        i++;
   
   }
 //Getter method for the static array of all manager IDs.

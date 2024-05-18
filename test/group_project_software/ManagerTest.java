@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
  */
 package group_project_software;
 
@@ -14,7 +13,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * 
+ * @author yarahalghamdi
  */
 public class ManagerTest {
     
@@ -31,6 +30,15 @@ public class ManagerTest {
     
     @Before
     public void setUp() {
+       // Reset static variables before each test
+        Manager.i = 0;
+        for (int j = 0; j < Manager.getAll_Manager_ID().length; j++) {
+            Manager.getAll_Manager_ID()[j] = 0;
+        }
+        Faculty.count = 0;
+        for (int j = 0; j < Faculty.getAll_faculty_ID().length; j++) {
+            Faculty.getAll_faculty_ID()[j] = 0;
+        }
     }
     
     @After
@@ -40,52 +48,38 @@ public class ManagerTest {
     /**
      * Test of deleteFaculity method, of class Manager.
      */
-    
-    
-    //Test of deleteFaculity method for successful deletion.
     @Test
-    public void testDeleteFaculity_successfully() {
-        System.out.println("deleteFaculity");
-        int IDManager = 1234;
-        int IDFaculty = 7756;
-        String expResult = "The deletion process was completed successfully";
-        String result = Manager.deleteFaculity(IDManager, IDFaculty);
-        assertEquals(expResult, result);
-        
-    }
+    public void testDeleteFaculity() {
+        Manager manager = new Manager("John", 1);
+        Faculty faculty = new Faculty("Doe", 2);
 
+        String result = Manager.deleteFaculity(1, 2);
+
+        assertEquals("The deletion process was completed successfully", result);
+        assertEquals(-1, Faculty.getAll_faculty_ID()[0]);
+    }
     
     
-    // Test of deleteFaculity method when manager does not have authorization.
-     public void testDeleteFaculity_authorization_M() {
-        System.out.println("deleteFaculity");
-        int IDManager = 4567;
-        int IDFaculty = 7756;
-        String expResult = "You don't have authorization to delete faculty";
-        String result = Manager.deleteFaculity(IDManager, IDFaculty);
-        assertEquals(expResult, result);
-        
-    }
-     //Test of deleteFaculity method when faculty ID is not found.
-      public void testDeleteFaculity_authorization_F() {
-        System.out.println("deleteFaculity");
-        int IDManager = 1234;
-        int IDFaculty = 5467;
-        String expResult = "There is no Instructor with this ID";
-        String result = Manager.deleteFaculity(IDManager, IDFaculty);
-        assertEquals(expResult, result);
-        
-    }
-      // Test of deleteFaculity method when both manager and faculty IDs are not valid.
-      public void testDeleteFaculity_authorization() {
-        System.out.println("deleteFaculity");
-        int IDManager = 9087;
-        int IDFaculty = 5467;
-        String expResult = "You don't have authorization to delete faculty";
-        String result = Manager.deleteFaculity(IDManager, IDFaculty);
-        assertEquals(expResult, result);
-        
-    }
 
+    /**
+     * Test of getAll_Manager_ID method, of class Manager.
+     */
+     @Test
+    public void testGetAll_Manager_ID() {
+        System.out.println("getAll_Manager_ID");
+
+        // Setup
+        Manager manager1 = new Manager("John", 1);
+        Manager manager2 = new Manager("Jane", 2);
+
+        // Action
+        int[] result = Manager.getAll_Manager_ID();
+
+        // Verify
+        int[] expected = new int[100];
+        expected[0] = 1;
+        expected[1] = 2;
+        assertArrayEquals(expected, result);
+    }
     
 }

@@ -131,7 +131,7 @@ public class Group_Project_Software {
                     Faculty f1 =new Faculty("wejdan",7770);
                     Faculty f2 =new Faculty("nada",7700);
                     // Create object of type Manager
-                    Manager M1 = new Manager("rehab",1357);
+                    Manager M1 = new Manager("rehab",7770);
                     
                     // Ask the user to enter the required data
                     System.out.print("Enter your ID number (you must be the manager):");
